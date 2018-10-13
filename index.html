@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>owowhatsthis</title>
+
+  </head>
+
+<style>
+body, html {
+  height: 100%;
+}
+.bg {
+  background-image: url("1bg2.png");
+
+  height: 100%;
+
+  /* flex on them for that sweet sweet vertical alignment lmao*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  resize: vertical;
+  overflow: auto;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.redarmy {
+  background-color: #FFFFFF
+}
+
+.bg-text {
+  padding: 20px;
+  resize: vertical;
+  overflow: auto;
+}
+.strokesuwu {
+  color:white;
+  text-shadow:
+  -.5px -.5px 0 #000,
+  .5px -.5px 0 #000,
+  -.5px .5px 0 #000,
+  .5px .5px 0 #000;
+
+}
+
+.bigboititle {
+  font-size: 700%;
+}
+
+.longlongman {
+  height:300%;
+  background-image: linear-gradient(#0c0102,#a51013);
+}
+
+.faded {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 2s; /* Firefox < 16 */
+        -ms-animation: fadein 2s; /* Internet Explorer */
+         -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.padmeup {
+  padding-top:100px;
+}
+
+#container {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+    border: 10px #333 solid;
+}
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+}
+</style>
+
+  <body>
+    <div class="bg">
+      <div class="container-fluid bg-text text-center strokesuwu">
+        <h1 class="bigboititle">Facial Communism</h1>
+        <h1>Have you ever felt like you're the ugliest in a group photo?</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid text-center longlongman strokesuwu">
+    <div style="background-image:url(1tc.png); background-repeat:no-repeat; background-position: center; padding-top:50px">
+      <div style="position: relative; left 0; top 0;">
+        <img src="xx.png" style="position: relative; left 0; top 0;" class="faded">
+      </div>
+      <h1> Failing to get any matches on Tinder?</h1>
+    </div>
+    <div style=" padding-top:500px"></div>
+    <div style="background-image:url(1c.png); background-repeat:no-repeat; background-position: center; padding-top:50px">
+      <div style="position: relative; left 0; top 0;">
+        <img src="xx.png" style="position: relative; left 0; top 0;" class="faded">
+      </div>
+      <h1>Can't look through your camera roll without developing an inferiority complex?</h1>
+    </div>
+    <div style=" padding-top:500px"></div>
+    <div style="height:512px; background-image:url(1p.png); background-repeat:no-repeat; background-position: center; padding-top:50px">
+      <h1> Don't worry comrade!</h1>
+      <h1 style="padding-top:300px">Together, we will seize the means of attractiveness.</h1>
+    </div>
+
+  <div id="container">
+    <video autoplay="true" id="videoElement">
+
+    </video>
+    </div>
+    <script>
+    var video = document.querySelector("#videoElement");
+    if (navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({video: true})
+    .then(function(stream) {
+    video.srcObject = stream;
+    })
+    .catch(function(err0r) {
+    console.log("Something went wrong!");
+    });
+    }
+</script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
