@@ -1,15 +1,16 @@
-from flask import Flask, render_template
-
+from flask import Flask, render_template, request
+from werkzeug import secure_filename
 app = Flask(__name__)
 
-@app.route('/taken_pic', methods=['GET','POST'])
-def taken_pic():
-    if request.method == 'POST':
-        inputImg = request.form['file'];
-        #import blend function with facialCommunism function
-        outputImg = facialCommunism(inputImg);
-        return jsonify(request.form['userID'], )#return what?
-    return render_template('signup.html')#return what?
-#troubleshooting
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route('/upload')
+def upload():
+   return render_template('trialPost.html')
+	
+@app.route('/uploader', methods = ['GET', 'POST'])
+def upload_file():
+   if request.method == 'POST':
+      f = request.files['file']
+      f.save(secure_filename(f.filename))
+      return 'file uploaded successfully'
+		
+app.run()
