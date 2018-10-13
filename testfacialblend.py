@@ -65,6 +65,7 @@ if __name__ == '__main__':
     # Define window names
     win_delaunay = "Delaunay Triangulation"
     win_voronoi = "Voronoi Diagram"
+    win_tempImg = "Temp Img"
  
     # Turn on animation while drawing triangles
     animate = True
@@ -109,6 +110,7 @@ if __name__ == '__main__':
             pt1 = (int(t[0]),int(t[1]))
             pt2 = (int(t[2]),int(t[3]))
             pt3 = (int(t[4]),int(t[5]))
+            dstBox = [min(int(t[0]),int(t[2]),int(t[4])), min(int(t[1]),int(t[3]),int(t[5])),max(int(t[0]),int(t[2]),int(t[4])), max(int(t[1]),int(t[3]),int(t[5]))]
             if rect_contains(rect, pt1) and rect_contains(rect, pt2) and rect_contains(rect, pt3) :
 
                 dstTri = np.float32([[t[0],t[1]], [t[2],t[3]], [t[4],t[5]]]);
@@ -123,9 +125,18 @@ if __name__ == '__main__':
                         s3 = points[j][index2][1];
                         s4 = points[j][index3][0];
                         s5 = points[j][index3][1];
+                        srcBox = [min(s0,s2,s4), min(s1,s3,s5),max(s0,s2,s4), max(s1,s3,s5)]
+
+                        src = img_orig[srcBox[0]:srcBox[2], srcBox[1]:srcBox[3]]
+                        cv2.imshow(win_tempImg, src)
+
                         srcTri = np.float32([[s0,s1], [s2,s3], [s4,s5]]);
                         transform = cv2.getAffineTransform(srcTri, dstTri);
-        
+                        #dstbox = cv2.warpAffine(src, transform, [dstBox[2]-dstBox[0]+1, dstBox[3]-dstBox[1]+1]);
+
+
+                        
+
 
 
 
