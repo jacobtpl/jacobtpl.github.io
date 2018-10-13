@@ -24,4 +24,5 @@ def undo():
       #f.save(secure_filename(f.filename))
       return render_template('vidya.html')
 
-
+if __name__ == "__main__":
+    app.run()
