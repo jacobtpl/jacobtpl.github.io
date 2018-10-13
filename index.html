@@ -16,6 +16,7 @@
 body, html {
   height: 100%;
 }
+
 .bg {
   background-image: url("1bg2.png");
 
@@ -34,7 +35,23 @@ body, html {
 }
 
 .redarmy {
-  background-color: #FFFFFF
+  background-color: #a51013;
+  height:auto;
+}
+a:hover{
+  text-decoration: none;
+  color:#FFD900;
+}
+a {
+  color:#FFD900;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
 }
 
 .bg-text {
@@ -50,6 +67,27 @@ body, html {
   -.5px .5px 0 #000,
   .5px .5px 0 #000;
 
+}
+
+a:before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #2098D1;
+  height: 4px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+a:hover:before, a:focus:before, a:active:before {
+  right: 0;
 }
 
 .bigboititle {
@@ -139,28 +177,17 @@ body, html {
       <h1>Can't look through your camera roll without developing an inferiority complex?</h1>
     </div>
     <div style=" padding-top:300px"></div>
-    <div style="height:512px; background-image:url(1pe.png); background-repeat:no-repeat; background-position: center; padding-top:50px">
+    <div style="height:512px; background-image:url(1l.png); background-repeat:no-repeat; background-position: center; padding-top:50px">
       <h1> Don't worry comrade!</h1>
-      <h1 style="padding-top:300px">Together, we will seize the means of attractiveness.</h1>
+      <h1  style="padding-top:300px">
+        <span class="patriotyellow">
+          <a href="vidya.html" target="">Together, we will seize the means of attractiveness.
+          </a>
+        </span>
+      </h1>
     </div>
+    <div class="redarmy"></div>
 
-  <div id="container">
-    <video autoplay="true" id="videoElement">
-
-    </video>
-    </div>
-    <script>
-    var video = document.querySelector("#videoElement");
-    if (navigator.mediaDevices.getUserMedia) {
-    navigator.mediaDevices.getUserMedia({video: true})
-    .then(function(stream) {
-    video.srcObject = stream;
-    })
-    .catch(function(err0r) {
-    console.log("Something went wrong!");
-    });
-    }
-</script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
