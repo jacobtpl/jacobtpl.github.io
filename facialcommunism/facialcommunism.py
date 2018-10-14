@@ -86,7 +86,7 @@ def morphTriangle(imgFrom, imgTo, tris, t, numFaces, alpha) :
     imgTo[r[1]:r[1]+r[3], r[0]:r[0]+r[2]] = imgTo[r[1]:r[1]+r[3], r[0]:r[0]+r[2]] * ( 1 - mask ) + imgRectBlended * mask
 
 
-def get_image(filename):
+def write_image(filename):
     imgOrig = cv2.imread(filename);
 
     points = np.float32(landmark.get_face_landmarks(imgOrig))
@@ -176,5 +176,6 @@ def get_image(filename):
             # imgFinal[i][j] = [int(255*weight[i][j]),int(255*weight[i][j]),int(255*weight[i][j])]
 
     # Display Result
-    cv2.imwrite( "output.jpg", np.uint8(imgFinal) );
+    cv2.imwrite("app/images/output.jpg", np.uint8(imgFinal));
+    # return np.uint8(imgFinal)
 
