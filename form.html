@@ -22,10 +22,67 @@ input[type=submit]{
     margin: 4px 2px;
     cursor: pointer;
 }
+.bg {
+	height:100%;
+	width: 100%;
+	background-color:#343a40;
+	opacity: 0.1;
+	padding:100%
+}
+
+.lds-ring {
+  display: inline-block;
+  /*position: relative; 
+  width: 64px;
+  height: 64px;*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #dc3545 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 </style>
  <body>
-	<div class="container-fluid" style="padding-left:10px">
+	<div id='loadingcircles' style='display:none' class="lds-ring"><div></div><div></div><div></div><div></div></div>
+ 	<div id="bg" class="bg" style="display:none"></div>
+	<script>
+		function showDiv() {
+		   document.getElementById('loadingcircles').style.display = "block";
+		   document.getElementById('bg').style.display = "block";}
+	</script>
+
+	<div class="container-fluid" style="padding-left:10px"/>
 		<h1 style="padding-top:50px">Submit</h1>
 		<hr style="size:100px"/>
 		<p> That's exactly what the proletariats would want you to do! Don't falter now, you are so close to <i>greatness</i>.</p>
@@ -33,15 +90,14 @@ input[type=submit]{
 		  <form action = "http://localhost:5000/uploader" method = "POST" 
 			 enctype = "multipart/form-data">
 			 <input type = "file" name = "file" />
-
-			 <input type = "submit"/>
+			 <input type = "submit" onclick="showDiv()"/>
 		  </form>
-		  
+
 	</div>
+	
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>  
-   </body>
-</html>
+
